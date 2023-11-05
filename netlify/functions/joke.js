@@ -2,28 +2,28 @@
 import jokes from './jokes.json';
 
 
-export default async (req, ctx) => {
-    if (req.method === "POST")
-        { const res = ctx.json({ message: 'you posted!' });
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
-            res.headers.append("Access-Control-Allow-Methods", "*");
-            return res;
-        } else if (req.method === "OPTIONS")
-        {
-            const res = new Response();
-            const randomIndex = Math.floor(Math.random() * jokes.length)
-            const randomJoke = jokes[randomIndex]
-            res.body = JSON.stringify(randomJoke)
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
-            res.headers.append("Access-Control-Allow-Methods", "*");
-            res.headers.append("Content-Type","application/json");
-            return res;
-        }
-};
+// export default async (req, ctx) => {
+//     if (req.method === "POST")
+//         { const res = ctx.json({ message: 'you posted!' });
+//             res.headers.set("Access-Control-Allow-Origin", "*");
+//             res.headers.append("Access-Control-Allow-Headers", "*");
+//             res.headers.append("Access-Control-Allow-Methods", "*");
+//             return res;
+//         } else if (req.method === "OPTIONS")
+//         {
+//             const res = new Response();
+//             const randomIndex = Math.floor(Math.random() * jokes.length)
+//             const randomJoke = 'jokes[randomIndex]'
+//             res.body = JSON.stringify(randomJoke)
+//             res.headers.set("Access-Control-Allow-Origin", "*");
+//             res.headers.append("Access-Control-Allow-Headers", "*");
+//             res.headers.append("Access-Control-Allow-Methods", "*");
+//             res.headers.append("Content-Type","application/json");
+//             return res;
+//         }
+// };
 
-const handler = async (event) => {
+export const handler = async (event) => {
     // Generates a random index based on the length of the jokes array
     const randomIndex = Math.floor(Math.random() * jokes.length)
     const randomJoke = jokes[randomIndex]
@@ -35,3 +35,4 @@ const handler = async (event) => {
         body: JSON.stringify(randomJoke)
     }
 }
+
