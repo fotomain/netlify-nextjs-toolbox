@@ -32,7 +32,12 @@ export const handler = async (event) => {
     // Other properties such as headers or body can also be included.
     return {
         statusCode: 200,
-        body: JSON.stringify(randomJoke)
+        body: JSON.stringify(randomJoke),
+        headers:{
+            "Access-Control-Allow-Headers": "*",
+            "Access-Control-Allow-Methods": "*",
+            "Content-Type": "application/json"
+        }
     }
 }
 
