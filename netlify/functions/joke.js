@@ -10,9 +10,10 @@ export default async (req, ctx) => {
             return res;
         } else if (req.method === "OPTIONS")
         {
-            const res = new Response(JSON.stringify(randomJoke));
             const randomIndex = Math.floor(Math.random() * jokes.length)
             const randomJoke = 'jokes[randomIndex]'
+
+            const res = new Response(JSON.stringify(randomJoke));
             // res.body =
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
