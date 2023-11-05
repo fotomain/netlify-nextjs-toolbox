@@ -1,11 +1,32 @@
 // Jokes provided from the lovely folks at https://icanhazdadjoke.com
 import jokes from './jokes.json';
 
-export const handler = async (event) => {
+
+export default async (req, ctx) => {
+    if (req.method === "POST")
+        { const res = ctx.json({ message: 'you posted!' });
+            res.headers.set("Access-Control-Allow-Origin", "*");
+            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Methods", "*");
+            return res;
+        } else if (req.method === "OPTIONS")
+        {
+            const res = new Response();
+            const randomIndex = Math.floor(Math.random() * jokes.length)
+            const randomJoke = jokes[randomIndex]
+            res.body = JSON.stringify(randomJoke)
+            res.headers.set("Access-Control-Allow-Origin", "*");
+            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Methods", "*");
+            return res;
+        }
+};
+
+const handler = async (event) => {
     // Generates a random index based on the length of the jokes array
     const randomIndex = Math.floor(Math.random() * jokes.length)
     const randomJoke = jokes[randomIndex]
-    
+
     // Netlify Functions need to return an object with a statusCode
     // Other properties such as headers or body can also be included.
     return {
