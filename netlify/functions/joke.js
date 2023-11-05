@@ -1,7 +1,6 @@
 // Jokes provided from the lovely folks at https://icanhazdadjoke.com
 import jokes from './jokes.json';
 
-
 // export default async (req, ctx) => {
 //     if (req.method === "POST")
 //         { const res = ctx.json({ message: 'you posted!' });
@@ -35,8 +34,8 @@ export const handler = async (event) => {
         body: JSON.stringify(randomJoke),
         headers:{
             "Access-Control-Allow-Headers": "*",
-            "Access-Control-Allow-Methods": "*",
-            "Content-Type": "application/json"
+            // "Access-Control-Allow-Methods": "*",
+            // "Content-Type": "application/json"
         }
     }
 }
