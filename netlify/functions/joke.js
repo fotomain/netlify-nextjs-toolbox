@@ -3,26 +3,23 @@ import jokes from './jokes.json';
 
 export default async (req, ctx) => {
     if (req.method === "POST")
-        { const res = ctx.json({ message: 'you posted!' });
+        { const res = ctx.json({ message: '!!!!!!!!!!!!!!! you posted!' });
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
             res.headers.append("Access-Control-Allow-Methods", "*");
             return res;
         } else if (req.method === "OPTIONS")
         {
-            const randomIndex = Math.floor(Math.random() * jokes.length)
-            const randomJoke = 'jokes[randomIndex]'
-
-            const res = new Response(JSON.stringify(randomJoke));
-            // res.body =
+            const res = new Response();
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
             res.headers.append("Access-Control-Allow-Methods", "*");
-            res.headers.append("Content-Type","application/json");
             return res;
         }
-};
 
+
+};
+//
 // export const handler = async (event) => {
 //     // Generates a random index based on the length of the jokes array
 //     const randomIndex = Math.floor(Math.random() * jokes.length)
