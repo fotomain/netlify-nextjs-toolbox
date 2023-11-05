@@ -23,4 +23,6 @@
 for = "/*"
 [headers.values]
 Access-Control-Allow-Origin = "*"
-Content-Type = "*"
+Access-Control-Allow-Methods = "*"
+Content-Type = "application/json"
+
