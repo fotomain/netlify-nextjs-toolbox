@@ -7,7 +7,8 @@ export default async (req, ctx) => {
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
             res.headers.append("Access-Control-Allow-Methods", "*");
-            res.headers.append("Authorization", "true");
+            // Authorization
+            res.headers.append("Access-Control-Allow-Credentials", "true");
             return res;
         } else if (req.method === "OPTIONS")
         {
@@ -15,7 +16,8 @@ export default async (req, ctx) => {
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
             res.headers.append("Access-Control-Allow-Methods", "*");
-            res.headers.append("Authorization", "true");
+            // Authorization
+            res.headers.append("Access-Control-Allow-Credentials", "true");
             return res;
         }
 
