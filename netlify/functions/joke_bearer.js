@@ -15,6 +15,7 @@ export default async (req, ctx) => {
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
+        res.headers.append("Access-Control-Allow-Credentials", "true");
         return res;
     }
 
