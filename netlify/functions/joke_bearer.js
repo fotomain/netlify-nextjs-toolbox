@@ -9,7 +9,8 @@ export default async (req, ctx) => {
         const res = ctx.json({
             message: '!!!!!!!!!!!!!!! 222 you posted!',
             req_data: req_data,
-            req_heders: req_heders[0]+req_heders[1]+req_heders[2]+req_heders[3],
+            req_heders_length: req_heders.length,
+            req_heders: JSON.stringify(req_heders),
         });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
