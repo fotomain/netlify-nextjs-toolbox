@@ -4,27 +4,27 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
 
-        // const req_data = await req.json();
-        // const res = ctx.json({
-        //     statusCode: 200,
-        //     message: '!!!!!!!!!!!!!!! you posted!'
-        //     // req_data: req_data,
-        // });
-
-        var oo_='---'
-        const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app'];
-        if (allowedOrigins.includes(origin)) {
-            // res.setHeader('Access-Control-Allow-Origin', origin);
-            oo_=origin
-        }
-
         const req_data = await req.json();
         const res = ctx.json({
             statusCode: 200,
-            origin: oo_,
-            message: '!!!!!!!!!!!!!!! you posted!',
-            req_data: req_data,
+            message: '!!!!!!!!!!!!!!! you posted!'
+            // req_data: req_data,
         });
+
+        // var oo_='---'
+        // const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app'];
+        // if (allowedOrigins.includes(origin)) {
+        //     // res.setHeader('Access-Control-Allow-Origin', origin);
+        //     oo_=origin
+        // }
+        //
+        // const req_data = await req.json();
+        // const res = ctx.json({
+        //     statusCode: 200,
+        //     origin: oo_,
+        //     message: '!!!!!!!!!!!!!!! you posted!',
+        //     req_data: req_data,
+        // });
 
 
 
