@@ -7,7 +7,7 @@ export default async (req, ctx) => {
     {
         const res = ctx.json({
             message: '!!!!!!!!!!!!!!! you posted!',
-            request_body: JSON.stringify(req.body),
+            request_body: JSON.stringify(req),
         });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
