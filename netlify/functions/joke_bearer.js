@@ -5,7 +5,7 @@ export default async (req, ctx) => {
     if (req.method === "POST")
         { const res = ctx.json({ message: '!!!!!!!!!!!!!!! joke_bearer posted!' });
             res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Headers", "Content-Type,Authorization");
             res.headers.append("Access-Control-Allow-Methods", "*");
             // Authorization
             res.headers.append("Access-Control-Allow-Credentials", "true");
@@ -14,7 +14,7 @@ export default async (req, ctx) => {
         {
             const res = new Response();
             res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Headers", "Content-Type,Authorization");
             res.headers.append("Access-Control-Allow-Methods", "*");
             // Authorization
             res.headers.append("Access-Control-Allow-Credentials", "true");
