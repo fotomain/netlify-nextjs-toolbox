@@ -8,7 +8,7 @@ export default async (req, ctx) => {
             res.headers.append("Access-Control-Allow-Headers", "Content-Type,Authorization");
             res.headers.append("Access-Control-Allow-Methods", "*");
             // Authorization
-            res.headers.append("Access-Control-Allow-Credentials", "true");
+            // res.headers.append("Access-Control-Allow-Credentials", "true");
             return res;
         } else if (req.method === "OPTIONS")
         {
