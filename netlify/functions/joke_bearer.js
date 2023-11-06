@@ -14,10 +14,12 @@ export default async (req, ctx) => {
         {
             const res = new Response();
             res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", {
-                "Content-Type":"application/json",
-                "Authorization": "!!!!!!!bearercode777999!!!!!!"
-            });
+            res.headers.append("Access-Control-Allow-Headers", "Content-Type");
+            // res.headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization");
+            // res.headers.append("Access-Control-Allow-Headers", {
+            //     "Content-Type":"application/json",
+            //     "Authorization": "!!!!!!!bearercode777999!!!!!!"
+            // });
             res.headers.append("Access-Control-Allow-Methods", "*");
             // Authorization
             res.headers.append("Access-Control-Allow-Credentials", "true");
