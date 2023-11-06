@@ -5,7 +5,12 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
         const req_data = await req.json();
-        const req_heders = req.headers;
+        var req_heders = [{}];
+
+        for (const pair of myHeaders.entries()) {
+            req_heders.push({e0: pair[0],e1: pair[1]}
+        }
+
         const res = ctx.json({
             message: '!!!!!!!!!!!!!!! 222 you posted!',
             req_data: req_data,
