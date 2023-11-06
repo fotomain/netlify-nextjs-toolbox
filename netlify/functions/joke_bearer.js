@@ -13,7 +13,7 @@ export default async (req, ctx) => {
 
         const res = ctx.json({
             message: '!!!!!!!!!!!!!!! 222 you posted!',
-            req_data: req_data,
+            // req_data: req_data,
             // req_heders_length: req_heders.length,
             // req_heders: JSON.stringify(req_heders),
         });
@@ -27,7 +27,7 @@ export default async (req, ctx) => {
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
-        res.headers.append("Access-Control-Allow-Credentials", "true");
+        // res.headers.append("Access-Control-Allow-Credentials", "true");
         return res;
     }
 
