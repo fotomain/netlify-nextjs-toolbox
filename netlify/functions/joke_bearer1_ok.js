@@ -8,7 +8,7 @@ export default async (req, ctx) => {
         const res = ctx.json({
             statusCode: 200,
             message: '!!!!!!!!!!!!!!! you posted!'
-            // req_data: req_data,
+            req_data: req_data,
         });
 
         // var oo_='---'
