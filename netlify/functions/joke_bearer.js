@@ -6,8 +6,8 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
         const res = ctx.json({
-            message: '!!!!!!!!!!!!!!! you posted!',
-            request_body: JSON.stringify(req),
+            message: '!!!!!!!!!!!!!!! 222 you posted!',
+            request_raw: req.toString(),
         });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
