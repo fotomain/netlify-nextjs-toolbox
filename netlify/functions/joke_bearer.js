@@ -4,7 +4,11 @@ import jokes from './jokes.json';
 
 export default async (req, ctx) => {
     if (req.method === "POST")
-    { const res = ctx.json({ message: '!!!!!!!!!!!!!!! you posted!' });
+    {
+        const res = ctx.json({
+            message: '!!!!!!!!!!!!!!! you posted!',
+            request_body: JSON.stringify(req.body),
+        });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
