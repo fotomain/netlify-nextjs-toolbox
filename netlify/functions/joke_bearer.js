@@ -16,7 +16,7 @@ export default async (req, ctx) => {
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", {
                 "Content-Type":"application/json",
-                "Authorization": "Bearer !!!!!!!code777999"
+                "Authorization": "!!!!!!!bearercode777999!!!!!!"
             });
             res.headers.append("Access-Control-Allow-Methods", "*");
             // Authorization
