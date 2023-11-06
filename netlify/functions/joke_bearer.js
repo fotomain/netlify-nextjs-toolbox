@@ -1,4 +1,5 @@
 
+// !!!!!!!!!!! FETCH TEST ONLY
 
 export default async (req, ctx) => {
     if (req.method === "POST")
