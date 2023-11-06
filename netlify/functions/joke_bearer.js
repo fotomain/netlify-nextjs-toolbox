@@ -17,7 +17,7 @@ export default async (req, ctx) => {
 
 
         //ccccccccccccccc
-        res.headers.set("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         res.headers.append("Access-Control-Allow-Methods", "*");
         res.headers.append("Access-Control-Allow-Credentials", "true");
@@ -31,7 +31,7 @@ export default async (req, ctx) => {
         // res.headers.append("Access-Control-Allow-Methods", "*");
 
         //ccccccccccccc
-        res.headers.set("Access-Control-Allow-Origin", "http://localhost:3000");
+        res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         res.headers.append("Access-Control-Allow-Methods", "*");
         res.headers.append("Access-Control-Allow-Credentials", "true");

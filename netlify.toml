@@ -25,4 +25,5 @@ for = "/*"
 Access-Control-Allow-Origin = "*"
 Access-Control-Allow-Methods = "*"
 Content-Type = "application/json"
+Access-Control-Allow-Credentials = "true"
 
