@@ -12,7 +12,9 @@ export default async (req, ctx) => {
     {
         const res = new Response();
         res.headers.set("Access-Control-Allow-Origin", "*");
-        res.headers.append("Access-Control-Allow-Headers", "*");
+        //222
+        res.headers.append("Access-Control-Allow-Headers", "Access-Control-*, Origin, X-Requested-With, Content-Type, Accept");
+        // res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
         return res;
     }
