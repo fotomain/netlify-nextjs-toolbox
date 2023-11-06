@@ -7,7 +7,7 @@ export default async (req, ctx) => {
         const req_data = await req.json();
         const res = ctx.json({
             statusCode: 200,
-            message: '!!!!!!!!!!!!!!! you posted!'
+            message: '!!!!!!!!!!!!!!! you posted!',
             req_data: req_data,
         });
 
