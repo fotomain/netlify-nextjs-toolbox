@@ -19,10 +19,10 @@
   force = true # ensure to always redirect
 
 
-[[headers]]
-for = "/*"
-[headers.values]
-Access-Control-Allow-Origin = "*"
+#[[headers]]
+#for = "/*"
+#[headers.values]
+#Access-Control-Allow-Origin = "*"
 #Access-Control-Allow-Methods = "*"
 #Content-Type = "application/json"
 
