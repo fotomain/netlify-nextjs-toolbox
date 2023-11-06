@@ -3,10 +3,12 @@
 export default async (req, ctx) => {
     if (req.method === "POST")
     {
+
         const req_data = await req.json();
         const res = ctx.json({
-        message: '!!!!!!!!!!!!!!! you posted!',
-        // req_data: req_data,
+            statusCode: 200,
+            message: '!!!!!!!!!!!!!!! you posted!',
+            req_data: req_data,
     });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
