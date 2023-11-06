@@ -2,6 +2,15 @@
 // !!!!!!!!!!! FETCH TEST ONLY
 
 // import NextCors from 'nextjs-cors';
+const cors = require('cors');
+
+const corsOptions = {
+    origin: 'https://example.com',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    optionsSuccessStatus: 200,
+};
+
 
 export default async (req, ctx) => {
 
@@ -30,7 +39,7 @@ export default async (req, ctx) => {
 
         res.headers.append("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         res.headers.append("Access-Control-Allow-Methods", "*");
-        res.headers.append("Access-Control-Allow-Credentials", true);
+        res.headers.append("Access-Control-Allow-Credentials", "true");
 
         return res;
     } else if (req.method === "OPTIONS")
