@@ -17,7 +17,7 @@ export default async (req, ctx) => {
         // https://community.auth0.com/t/how-to-validate-a-token-on-next-js-backend-from-a-separate-frontend/103328/2
 
     {
-        const token = req.headers.get("Authorization");
+        // const token = req.headers.get("Authorization");
         const res = new Response();
         res.headers.set("Access-Control-Allow-Origin", "*");
         //222
