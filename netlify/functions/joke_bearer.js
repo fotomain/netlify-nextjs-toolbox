@@ -3,28 +3,19 @@ import jokes from './jokes.json';
 
 export default async (req, ctx) => {
     if (req.method === "POST")
-        { const res = ctx.json({ message: '!!!!!!!!!!!!!!! joke_bearer posted!' });
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "Content-Type,Authorization");
-            res.headers.append("Access-Control-Allow-Methods", "*");
-            // Authorization
-            // res.headers.append("Access-Control-Allow-Credentials", "true");
-            return res;
-        } else if (req.method === "OPTIONS")
-        {
-            const res = new Response();
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "Content-Type");
-            // res.headers.append("Access-Control-Allow-Headers", "Content-Type, Authorization");
-            // res.headers.append("Access-Control-Allow-Headers", {
-            //     "Content-Type":"application/json",
-            //     "Authorization": "!!!!!!!bearercode777999!!!!!!"
-            // });
-            res.headers.append("Access-Control-Allow-Methods", "*");
-            // Authorization
-            res.headers.append("Access-Control-Allow-Credentials", "true");
-            return res;
-        }
+    { const res = ctx.json({ message: '!!!!!!!!!!!!!!! you posted!' });
+        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.append("Access-Control-Allow-Headers", "*");
+        res.headers.append("Access-Control-Allow-Methods", "*");
+        return res;
+    } else if (req.method === "OPTIONS")
+    {
+        const res = new Response();
+        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.append("Access-Control-Allow-Headers", "*");
+        res.headers.append("Access-Control-Allow-Methods", "*");
+        return res;
+    }
 
 
 };
