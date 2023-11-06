@@ -1,5 +1,4 @@
 
-// Jokes provided from the lovely folks at https://icanhazdadjoke.com
 import jokes from './jokes.json';
 
 export default async (req, ctx) => {
