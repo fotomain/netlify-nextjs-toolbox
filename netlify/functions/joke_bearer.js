@@ -17,7 +17,7 @@ export default async (req, ctx) => {
 
 
         //ccccccccccccccc
-        const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app/'];
+        const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app'];
         if (allowedOrigins.includes(origin)) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         }
@@ -36,7 +36,7 @@ export default async (req, ctx) => {
         // res.headers.append("Access-Control-Allow-Methods", "*");
 
         //ccccccccccccc
-        const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app/'];
+        const allowedOrigins = ['http://localhost:3000','http://localhost:3001','https://port555.netlify.app'];
         if (allowedOrigins.includes(origin)) {
             res.setHeader('Access-Control-Allow-Origin', origin);
         }
