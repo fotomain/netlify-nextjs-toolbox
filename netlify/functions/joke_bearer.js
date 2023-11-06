@@ -56,14 +56,3 @@ export default async (req, ctx) => {
 
 
 };
-
-
-
-
-
-export default function handler(req, res) {
-    cors(corsOptions)(req, res, () => {
-        // Your API code here
-        res.status(200).json({ message: 'Hello, World!' });
-    });
-}
