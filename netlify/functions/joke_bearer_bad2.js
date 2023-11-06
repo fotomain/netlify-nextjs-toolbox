@@ -2,7 +2,6 @@
 // !!!!!!!!!!! FETCH TEST ONLY
 
 // import NextCors from 'nextjs-cors';
-const cors = require('cors');
 
 const corsOptions = {
     origin: 'https://example.com',
@@ -70,9 +69,3 @@ export default async (req, ctx) => {
 
 
 
-export default function handler(req, res) {
-    cors(corsOptions)(req, res, () => {
-        // Your API code here
-        res.status(200).json({ message: 'Hello, World!' });
-    });
-}
