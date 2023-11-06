@@ -15,6 +15,7 @@ export default async (req, ctx) => {
 
     } else if (req.method === "OPTIONS")
         // https://community.auth0.com/t/how-to-validate-a-token-on-next-js-backend-from-a-separate-frontend/103328/2
+
     {
         const token = req.headers.get("Authorization");
         const res = new Response();
@@ -24,14 +25,14 @@ export default async (req, ctx) => {
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
 
-        if(token==="!!!!!!!bearercode777999!!!!!!")
-            return res;
-        else{
-            return new NextResponse(
-                JSON.stringify({success: false, message: '!!!!! No bearer Authentication failed: No token given'}),
-                {status: 401, headers: {'content-type': 'application/json'}}
-            );
-        }
+        // if(token==="!!!!!!!bearercode777999!!!!!!")
+        //     return res;
+        // else{
+        //     return new NextResponse(
+        //         JSON.stringify({success: false, message: '!!!!! No bearer Authentication failed: No token given'}),
+        //         {status: 401, headers: {'content-type': 'application/json'}}
+        //     );
+        // }
     }
 
 
