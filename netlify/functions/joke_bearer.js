@@ -8,7 +8,7 @@ export default async (req, ctx) => {
         var req_heders = [{}];
 
         for (const pair of myHeaders.entries()) {
-            req_heders.push({e0: pair[0],e1: pair[1]}
+            req_heders.push({e0: pair[0],e1: pair[1]})
         }
 
         const res = ctx.json({
