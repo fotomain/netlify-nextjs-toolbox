@@ -49,8 +49,11 @@ export default async (req, ctx) => {
                     // return res;
                 });
 
-            res.staus=200
-            res.staus_message="email sended successfully"
+            const res = ctx.json({
+                staus: 200,
+                staus_message: '!!!!!!!!!!!!!!! email sended successfully',
+                req_data: req_data,
+            });
             return res;
 
         }catch (e) {
