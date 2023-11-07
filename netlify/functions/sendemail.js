@@ -32,28 +32,18 @@ export default async (req, ctx) => {
             email: params.email,
         };
 
-        await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
-            .then((value) => {
-                // return response to users
-                res.status(200).send({
-                    message: "email sended created successfully",
-                    data: port_emails_sended_model,
-                    error: {},
-                })
-            });
-
-
-
-        // await setDoc(
-        //     doc(db,'port_emails_sended', Date.now().toString() )
-        //     ,{
-        //         email_guid:'email_guid'+Date.now().toString(),
-        //     }
-        // ).then((res)=>{
-        //     console.log("=== set_send_email create new user")
-        // })
+        // await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
+        //     .then((value) => {
+        //         // return response to users
+        //         res.status(200).send({
+        //             message: "email sended created successfully",
+        //             data: port_emails_sended_model,
+        //             error: {},
+        //         })
+        //     });
 
         return res;
+
     } else if (req.method === "OPTIONS")
     {
         const res = new Response();
