@@ -12,12 +12,6 @@ export default async (req, ctx) => {
     {
 
         const req_data = await req.json();
-        var res = ctx.json({
-            req_data: req_data,
-        });
-        res.headers.set("Access-Control-Allow-Origin", "*");
-        res.headers.append("Access-Control-Allow-Headers", "*");
-        res.headers.append("Access-Control-Allow-Methods", "*");
 
         const params = {email:'aa@wwwwwwwww.com'}
 
@@ -41,14 +35,29 @@ export default async (req, ctx) => {
                     //no actions on netlify
                 });
 
-            res = {...res,...{
+            var res = ctx.json({
                 staus: 200,
                 staus_message: '!!!!!!!!!!!!!!! email sended successfully',
-            }};
+                req_data: req_data,
+            });
+            res.headers.set("Access-Control-Allow-Origin", "*");
+            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Methods", "*");
+
             return res;
 
         }catch (e) {
-            res.error = e.toString()
+
+            var res = ctx.json({
+                staus: 500,
+                error: e.toString(),
+                staus_message: 'error',
+                req_data: req_data,
+            });
+            res.headers.set("Access-Control-Allow-Origin", "*");
+            res.headers.append("Access-Control-Allow-Headers", "*");
+            res.headers.append("Access-Control-Allow-Methods", "*");
+
             return res;
         }
 
