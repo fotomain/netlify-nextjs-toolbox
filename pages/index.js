@@ -5,14 +5,10 @@ import FeedbackForm from "@components/FeedbackForm";
 import JokeBlock from "@components/JokeBlock";
 
 export default function Home() {
+  return (
     <div className="container">
-
-        <Head>
-            <title>Next.js api</title>
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-
+        <title>Next.js API</title>
+        <link rel="icon" href="/favicon.ico" />
     </div>
-
+  );
 }
-
