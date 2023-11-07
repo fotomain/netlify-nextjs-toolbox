@@ -11,6 +11,13 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
 
+        const req_data = await req.json();
+        const res = ctx.json({
+            statusCode: 200,
+            message: '!!!!!!!!!!!!!!! ddddddddddddd',
+            req_data: req_data,
+            // reqorigin: oo_,
+        });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
@@ -35,13 +42,7 @@ export default async (req, ctx) => {
                 })
             });
 
-        const req_data = await req.json();
-        const res = ctx.json({
-            statusCode: 200,
-            message: '!!!!!!!!!!!!!!! ddddddddddddd',
-            req_data: req_data,
-            // reqorigin: oo_,
-        });
+
 
         // await setDoc(
         //     doc(db,'port_emails_sended', Date.now().toString() )
