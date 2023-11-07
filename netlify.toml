@@ -5,7 +5,7 @@
 [functions]
   node_bundler = "esbuild"
 
-[[plugins]]
+#[[plugins]]
 #  package = "netlify-plugin-cypress"
 
 ## Learn more about redirects here
