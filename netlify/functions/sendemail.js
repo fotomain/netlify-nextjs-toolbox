@@ -11,13 +11,18 @@ export default async (req, ctx) => {
             req_data: req_data,
         });
 
-
         res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.append("Access-Control-Allow-Headers", "*");
+        res.headers.append("Access-Control-Allow-Methods", "*");
+
         return res;
     } else if (req.method === "OPTIONS")
     {
         const res = new Response();
         res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.append("Access-Control-Allow-Headers", "*");
+        res.headers.append("Access-Control-Allow-Methods", "*");
+
         return res;
     }
 
