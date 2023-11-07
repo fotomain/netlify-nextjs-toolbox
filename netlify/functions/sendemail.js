@@ -11,6 +11,10 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
 
+        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.append("Access-Control-Allow-Headers", "*");
+        res.headers.append("Access-Control-Allow-Methods", "*");
+
         const params = {email:'aa@wwwwwwwww.com'}
 
         const port_emails_sended = app.firestore().collection('port_emails_sended')
@@ -25,7 +29,7 @@ export default async (req, ctx) => {
             .then((value) => {
                 // return response to users
                 res.status(200).send({
-                    message: "user created successfully",
+                    message: "email sended created successfully",
                     data: port_emails_sended_model,
                     error: {},
                 })
@@ -48,10 +52,6 @@ export default async (req, ctx) => {
         //     console.log("=== set_send_email create new user")
         // })
 
-        res.headers.set("Access-Control-Allow-Origin", "*");
-
-        res.headers.append("Access-Control-Allow-Headers", "*");
-        res.headers.append("Access-Control-Allow-Methods", "*");
         return res;
     } else if (req.method === "OPTIONS")
     {
