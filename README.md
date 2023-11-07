@@ -1,5 +1,10 @@
 # Next.js Toolbox Template
 
+npm cache clean --force
+npm uninstall -D netlify-plugin-cypress
+npm uninstall cypress
+npx npm-check-updates -u
+npm i
 npm install firebase
 
 ![Netlify + Next](https://user-images.githubusercontent.com/43764894/223561089-2b729a3d-2963-4fc1-ad9b-a8618cd3c87e.png)
