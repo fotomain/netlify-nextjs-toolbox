@@ -29,7 +29,8 @@ export default async (req, ctx) => {
     } else if (req.method === "OPTIONS")
     {
         const res = new Response();
-        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
+        // res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
         return res;
