@@ -1,7 +1,7 @@
 
 
 var admin = require("firebase-admin");
-var serviceAccount = require("./admin_key.json");
+var serviceAccount = require("./firebase_admin_key.json");
 
 const app = admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
@@ -33,6 +33,10 @@ export default async (req, ctx) => {
                 .then((value) => {
                     //no actions on netlify
                 });
+
+
+            //TODO
+            //===  DOC https://github.com/resendlabs/react-email/blob/main/examples/nodemailer/src/index.tsx
 
             var res = ctx.json({
                 staus: 200,
