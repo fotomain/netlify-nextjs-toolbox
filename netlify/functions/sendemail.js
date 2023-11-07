@@ -32,19 +32,22 @@ export default async (req, ctx) => {
                 .set(port_emails_sended_model,{ merge: true })
                 .then((value) => {
                     //no actions on netlify
+
+                    var res = ctx.json({
+                        staus: 200,
+                        staus_message: '!!!!!!!!!!!!!!! email sended successfully',
+                        req_data: req_data,
+                        port_emails_sended_model:port_emails_sended_model,
+                    });
+                    res.headers.set("Access-Control-Allow-Origin", "*");
+                    res.headers.append("Access-Control-Allow-Headers", "*");
+                    res.headers.append("Access-Control-Allow-Methods", "*");
+
+                    return res;
+
                 });
 
-            var res = ctx.json({
-                staus: 200,
-                staus_message: '!!!!!!!!!!!!!!! email sended successfully',
-                req_data: req_data,
-                port_emails_sended_model:port_emails_sended_model,
-            });
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
-            res.headers.append("Access-Control-Allow-Methods", "*");
 
-            return res;
 
         }catch (e) {
 
@@ -53,6 +56,7 @@ export default async (req, ctx) => {
                 error: e.toString(),
                 staus_message: 'error',
                 req_data: req_data,
+
                 port_emails_sended_model:port_emails_sended_model,
             });
 
