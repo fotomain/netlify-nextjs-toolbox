@@ -1,7 +1,7 @@
 
-// import {db} from "firebase-config";
+import {db} from "firebase-config";
 //
-// import {doc, setDoc} from "firebase/firestore";
+import {doc, setDoc} from "firebase/firestore";
 
 export default async (req, ctx) => {
     if (req.method === "POST")
