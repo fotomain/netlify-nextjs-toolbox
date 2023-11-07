@@ -35,6 +35,7 @@ export default async (req, ctx) => {
 
         try {
 
+            // https://github.com/kekule15/node-js-firebase-cloud-functions--upload-files/blob/master/functions/index.js
             await collection_emails_sended
                 .doc(docID)
                 .set(port_emails_sended_model,{ merge: true })
@@ -45,16 +46,18 @@ export default async (req, ctx) => {
                     //     data: port_emails_sended_model,
                     //     error: {},
                     // })
-                    res.staus=200
-                    res.staus_message="email sended created successfully"
                     // return res;
                 });
 
+            res.staus=200
+            res.staus_message="email sended successfully"
+            return res;
+
         }catch (e) {
             res.error = e.toString()
+            return res;
         }
 
-        return res;
 
     } else if (req.method === "OPTIONS")
     {
