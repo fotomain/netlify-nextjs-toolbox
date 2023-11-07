@@ -11,6 +11,26 @@ export default async (req, ctx) => {
     if (req.method === "POST")
     {
 
+        const params = {email:'aa@wwwwwwwww.com'}
+
+        const port_emails_sended = app.firestore().collection('port_emails_sended')
+
+        const docID='email_guid'+Date.now().toString()
+        const port_emails_sended_model = {
+            id: docID,
+            email: params.email,
+        };
+
+        const ss = await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
+            .then((value) => {
+                // return response to users
+                res.status(200).send({
+                    message: "user created successfully",
+                    data: userModel,
+                    error: {},
+                })
+            });
+
         const req_data = await req.json();
         const res = ctx.json({
             statusCode: 200,
