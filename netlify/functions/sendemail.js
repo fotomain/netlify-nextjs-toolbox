@@ -12,11 +12,8 @@ export default async (req, ctx) => {
     {
 
         const req_data = await req.json();
-        const res = ctx.json({
-            statusCode: 200,
-            message: '!!!!!!!!!!!!!!! ddddddddddddd',
+        var res = ctx.json({
             req_data: req_data,
-            // reqorigin: oo_,
         });
         res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
@@ -30,6 +27,7 @@ export default async (req, ctx) => {
         const port_emails_sended_model = {
             id: docID,
             email: params.email,
+            otp_code:(Math.floor(Math.random()*10000))
         };
         res.port_emails_sended_model = port_emails_sended_model;
 
@@ -40,20 +38,13 @@ export default async (req, ctx) => {
                 .doc(docID)
                 .set(port_emails_sended_model,{ merge: true })
                 .then((value) => {
-                    // return response to users
-                    // res.status(200).send({
-                    //     message: "email sended created successfully",
-                    //     data: port_emails_sended_model,
-                    //     error: {},
-                    // })
-                    // return res;
+                    //no actions on netlify
                 });
 
-            const res = ctx.json({
+            res = {...res,...{
                 staus: 200,
                 staus_message: '!!!!!!!!!!!!!!! email sended successfully',
-                req_data: req_data,
-            });
+            }};
             return res;
 
         }catch (e) {
