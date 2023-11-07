@@ -7,7 +7,6 @@ admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 });
 
-
 export default async (req, ctx) => {
     if (req.method === "POST")
     {
