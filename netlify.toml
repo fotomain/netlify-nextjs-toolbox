@@ -22,7 +22,9 @@
 [[headers]]
 for = "/*"
 [headers.values]
+#=== WORKS FOR SPECIAL
 Access-Control-Allow-Origin = "https://port555.netlify.app"
+#=== WORKS FOR ALL
 #Access-Control-Allow-Origin = "*"
 #Access-Control-Allow-Methods = "*"
 #Content-Type = "application/json"
