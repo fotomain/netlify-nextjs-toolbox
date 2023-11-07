@@ -26,7 +26,7 @@ export default async (req, ctx) => {
                 // return response to users
                 res.status(200).send({
                     message: "user created successfully",
-                    data: userModel,
+                    data: port_emails_sended_model,
                     error: {},
                 })
             });
