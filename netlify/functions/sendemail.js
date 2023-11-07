@@ -1,8 +1,9 @@
 
-import {db} from "firebase-config";
+const { initializeApp } = require("firebase-admin/app");
 
-import {doc, setDoc} from "firebase/firestore";
-
+// import {db} from "firebase-config";
+//
+// import {doc, setDoc} from "firebase/firestore";
 
 export default async (req, ctx) => {
     if (req.method === "POST")
@@ -16,6 +17,14 @@ export default async (req, ctx) => {
             // reqorigin: oo_,
         });
 
+        // await setDoc(
+        //     doc(db,'port_emails_sended', Date.now().toString() )
+        //     ,{
+        //         email_guid:'email_guid'+Date.now().toString(),
+        //     }
+        // ).then((res)=>{
+        //     console.log("=== set_send_email create new user")
+        // })
 
         res.headers.set("Access-Control-Allow-Origin", "*");
 
