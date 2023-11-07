@@ -38,6 +38,7 @@ export default async (req, ctx) => {
                 staus: 200,
                 staus_message: '!!!!!!!!!!!!!!! email sended successfully',
                 req_data: req_data,
+                port_emails_sended_model:port_emails_sended_model,
             });
             res.headers.set("Access-Control-Allow-Origin", "*");
             res.headers.append("Access-Control-Allow-Headers", "*");
@@ -52,7 +53,7 @@ export default async (req, ctx) => {
                 error: e.toString(),
                 staus_message: 'error',
                 req_data: req_data,
-                port_emails_sended_model:port_emails_sended_model
+                port_emails_sended_model:port_emails_sended_model,
             });
 
             res_err.headers.set("Access-Control-Allow-Origin", "*");
