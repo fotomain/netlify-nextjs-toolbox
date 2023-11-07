@@ -19,18 +19,7 @@ export default async (req, ctx) => {
         });
 
 
-        //
-        // const req_data = await req.json();
-        // const res = ctx.json({
-        //     statusCode: 200,
-        //     origin: oo_,
-        //     message: '!!!!!!!!!!!!!!! you posted!',
-        //     req_data: req_data,
-        // });
-
-
-
-        res.headers.set("Access-Control-Allow-Origin", "*");
+        res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
         return res;
