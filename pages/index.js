@@ -12,7 +12,7 @@ export default function Home() {
 
 }
 
-function Home() {
+function Home1() {
   return (
     <div className="container">
       <Head>
