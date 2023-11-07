@@ -32,7 +32,6 @@ export default async (req, ctx) => {
                 .set(port_emails_sended_model,{ merge: true })
                 .then((value) => {
                     //no actions on netlify
-
                 });
 
             var res = ctx.json({
