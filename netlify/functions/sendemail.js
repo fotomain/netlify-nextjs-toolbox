@@ -24,25 +24,26 @@ export default async (req, ctx) => {
 
         const params = {email:'aa@wwwwwwwww.com'}
 
-        const port_emails_sended = app.firestore().collection('port_emails_sended')
+        const collection_emails_sended = app.firestore().collection('collection_emails_sended')
 
         const docID='email_guid'+Date.now().toString()
         const port_emails_sended_model = {
             id: docID,
             email: params.email,
         };
+        res.port_emails_sended_model = port_emails_sended_model;
 
-        // await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
-        //     .then((value) => {
-        //         // return response to users
-        //         res.status(200).send({
-        //             message: "email sended created successfully",
-        //             data: port_emails_sended_model,
-        //             error: {},
-        //         })
-        //     });
+        await collection_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
+            .then((value) => {
+                // return response to users
+                res.status(200).send({
+                    message: "email sended created successfully",
+                    data: port_emails_sended_model,
+                    error: {},
+                })
+            });
 
-        return res;
+        // return res;
 
     } else if (req.method === "OPTIONS")
     {
