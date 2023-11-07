@@ -21,7 +21,7 @@ export default async (req, ctx) => {
             email: params.email,
         };
 
-        const ss = await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
+        await port_emails_sended.doc(docID).set(port_emails_sended_model,{ merge: true })
             .then((value) => {
                 // return response to users
                 res.status(200).send({
