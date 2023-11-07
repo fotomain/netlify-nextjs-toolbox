@@ -20,6 +20,7 @@ export default async (req, ctx) => {
 
 
         //============= DO NOT DELETE
+        //PLACE3
         // THIS PREDOMINATE OVER netlify.toml
         res.headers.set("Access-Control-Allow-Origin", "*");
         //WORKS res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
@@ -29,8 +30,10 @@ export default async (req, ctx) => {
     } else if (req.method === "OPTIONS")
     {
         const res = new Response();
-        res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
-        // res.headers.set("Access-Control-Allow-Origin", "*");
+        //PLACE2
+        // THIS PREDOMINATE OVER netlify.toml AND PREFLY > OVER POST BECOUSE IT EARLIE
+        // res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
+        res.headers.set("Access-Control-Allow-Origin", "*");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
         return res;
