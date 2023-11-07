@@ -23,7 +23,6 @@ export default async (req, ctx) => {
             email: params.email,
             otp_code:(Math.floor(Math.random()*10000))
         };
-        res.port_emails_sended_model = port_emails_sended_model;
 
         try {
 
@@ -48,17 +47,19 @@ export default async (req, ctx) => {
 
         }catch (e) {
 
-            var res = ctx.json({
+            var res_err = ctx.json({
                 staus: 500,
                 error: e.toString(),
                 staus_message: 'error',
                 req_data: req_data,
+                port_emails_sended_model:port_emails_sended_model
             });
-            res.headers.set("Access-Control-Allow-Origin", "*");
-            res.headers.append("Access-Control-Allow-Headers", "*");
-            res.headers.append("Access-Control-Allow-Methods", "*");
 
-            return res;
+            res_err.headers.set("Access-Control-Allow-Origin", "*");
+            res_err.headers.append("Access-Control-Allow-Headers", "*");
+            res_err.headers.append("Access-Control-Allow-Methods", "*");
+
+            return res_err;
         }
 
 
