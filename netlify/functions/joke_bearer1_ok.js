@@ -19,7 +19,9 @@ export default async (req, ctx) => {
         });
 
 
-        // res.headers.set("Access-Control-Allow-Origin", "*");
+        //============= DO NOT DELETE
+        // THIS PREDOMINATE OVER netlify.toml
+        res.headers.set("Access-Control-Allow-Origin", "*");
         //WORKS res.headers.set("Access-Control-Allow-Origin", "https://port555.netlify.app");
         res.headers.append("Access-Control-Allow-Headers", "*");
         res.headers.append("Access-Control-Allow-Methods", "*");
