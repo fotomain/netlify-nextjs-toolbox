@@ -47,15 +47,14 @@ export default async (req, ctx) => {
                     // })
                     res.staus=200
                     res.staus_message="email sended created successfully"
-                    return res;
+                    // return res;
                 });
 
         }catch (e) {
             res.error = e.toString()
-            return res;
         }
 
-        // return res;
+        return res;
 
     } else if (req.method === "OPTIONS")
     {
