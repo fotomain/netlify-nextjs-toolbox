@@ -1,9 +1,12 @@
 
-const { initializeApp } = require("firebase-admin/app");
 
-// import {db} from "firebase-config";
-//
-// import {doc, setDoc} from "firebase/firestore";
+var admin = require("firebase-admin");
+var serviceAccount = require("admin_key.json");
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount)
+});
+
 
 export default async (req, ctx) => {
     if (req.method === "POST")
